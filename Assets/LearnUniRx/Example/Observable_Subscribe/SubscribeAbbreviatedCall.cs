@@ -36,6 +36,13 @@ public class SubscribeAbbreviatedCall : MonoBehaviour
 		OnNextOnErrorOnCompleted ();
 	}
 
+	public void SendMessageUnitDefault ()
+	{
+		var _subject = new Subject<Unit> ();
+		_subject.Subscribe (_ => print ("No mean : " + _));
+		_subject.OnNext (Unit.Default);
+	}
+
 	public void SendMessage ()
 	{
 		subject.OnNext (100);
